@@ -134,7 +134,120 @@ img{max-width:100%;height:auto}
 @media(max-width:720px){#fleet .fleet-grid{grid-template-columns:repeat(2,1fr)}.destination-gallery{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){#fleet .fleet-grid{grid-template-columns:1fr}.destination-gallery{grid-template-columns:1fr 1fr}#fleet .vehicle img{height:235px!important}.gallery-dest{height:145px}}
 </style>
-</head>
+<style id="spiritual-update">
+.spiritual-hero .slide{background-size:cover!important;background-position:center!important}
+.spiritual-hero .hero-content{max-width:700px}
+.spiritual-hero .hero-content>span{display:inline-block;color:#ffd05a;font-weight:900;letter-spacing:2px;margin-bottom:12px}
+.spiritual-hero .hero-content h1{font-size:clamp(38px,5vw,70px);line-height:1.02}
+.spiritual-hero .hero-content p{font-size:18px;max-width:650px;line-height:1.7}
+.reviews-section{padding:75px 0;background:#fff}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review-card{padding:28px;border:1px solid #e1ebf4;border-radius:18px;box-shadow:0 12px 32px rgba(5,55,100,.08);background:#fff}
+.review-card .stars{color:#ffb400;font-size:20px;letter-spacing:3px;margin-bottom:15px}
+.review-card p{color:#52677e;line-height:1.75;font-style:italic}
+.review-card h4{color:#063b76;font-size:17px;margin:18px 0 3px}
+.review-card span{font-size:13px;color:#8191a2}
+@media(max-width:760px){.review-grid{grid-template-columns:1fr}.spiritual-hero .hero-content p{font-size:15px}}
+</style>
+<style id="hero-layout-final-fix">
+.spiritual-hero{
+  min-height:570px!important;
+  height:570px!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.spiritual-hero .slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  background-size:cover!important;
+  background-position:center!important;
+  padding:0!important;
+}
+.spiritual-hero .slide:not(.active){opacity:0!important;pointer-events:none!important}
+.spiritual-hero .slide.active{opacity:1!important;pointer-events:auto!important}
+.spiritual-hero .hero-content{
+  position:relative!important;
+  z-index:3!important;
+  width:min(1180px,88%)!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+  padding:55px 0 95px!important;
+  display:block!important;
+  text-align:left!important;
+}
+.spiritual-hero .hero-content > span{
+  display:block!important;
+  width:auto!important;
+  max-width:620px!important;
+  margin:0 0 12px!important;
+  color:#ffd04d!important;
+  font-size:14px!important;
+  line-height:1.4!important;
+  font-weight:900!important;
+  letter-spacing:2px!important;
+}
+.spiritual-hero .hero-content h1{
+  display:block!important;
+  width:auto!important;
+  max-width:680px!important;
+  margin:0 0 18px!important;
+  color:#fff!important;
+  font-size:clamp(40px,5vw,68px)!important;
+  line-height:1.04!important;
+}
+.spiritual-hero .hero-content p{
+  display:block!important;
+  max-width:620px!important;
+  margin:0 0 26px!important;
+  color:#fff!important;
+  font-size:17px!important;
+  line-height:1.7!important;
+}
+.spiritual-hero .hero-actions{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:12px!important;
+  align-items:center!important;
+}
+.spiritual-hero .hero-actions .btn{
+  width:auto!important;
+  min-width:150px!important;
+  border-radius:8px!important;
+  padding:13px 22px!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+.spiritual-hero .slider-dots{
+  position:absolute!important;
+  z-index:5!important;
+  left:50%!important;
+  bottom:30px!important;
+  transform:translateX(-50%)!important;
+  display:flex!important;
+  gap:8px!important;
+}
+@media(max-width:720px){
+  .spiritual-hero{height:540px!important;min-height:540px!important}
+  .spiritual-hero .hero-content{width:88%!important;padding:45px 0 105px!important}
+  .spiritual-hero .hero-content h1{font-size:40px!important;max-width:100%!important}
+  .spiritual-hero .hero-content p{font-size:15px!important;line-height:1.55!important;max-width:100%!important}
+  .spiritual-hero .hero-content > span{font-size:12px!important}
+  .spiritual-hero .hero-actions{gap:9px!important}
+  .spiritual-hero .hero-actions .btn{padding:11px 16px!important;min-width:0!important}
+}
+.services .card .service-img{
+  object-fit:cover!important;
+  object-position:center!important;
+}
+</style>
+<style>
+.map-section{padding:75px 0;background:#f5faff}.map-wrap{overflow:hidden;border-radius:20px;box-shadow:0 15px 40px rgba(4,45,85,.12);height:450px}.map-wrap iframe{width:100%!important;height:100%!important;display:block}
+@media(max-width:600px){.map-section{padding:55px 0}.map-wrap{height:360px}}
+</style></head>
 <body>
 <div class="topbar"><div class="container"><span><i class="fa-solid fa-location-dot"></i> Dehradun, Uttarakhand – 248001</span><span><i class="fa-solid fa-phone"></i> 7906042463 &nbsp; | &nbsp; <i class="fa-solid fa-envelope"></i> doontour@gmail.com</span></div></div>
 <header><div class="container nav">
@@ -144,16 +257,12 @@ img{max-width:100%;height:auto}
 </div></header>
 
 <main>
-<section class="hero" id="home">
-<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1900&q=88')"></div>
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1900&q=88')"></div>
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1900&q=88')"></div>
-<div class="container hero-content"><div class="hero-copy">
-<span class="eyebrow"><i class="fa-solid fa-route"></i> 24×7 Taxi • Tours • Travel Assistance</span>
-<h1>Book Your <span>Journey Today</span></h1>
-<p>Travel with confidence and comfort. Taxi booking, Uttarakhand tours, Char Dham Yatra, hotel booking, tickets and customized travel solutions from Dehradun.</p>
-<div class="hero-actions"><a class="btn" href="tel:+917906042463"><i class="fa-solid fa-phone"></i> Call 7906042463</a><a class="btn whatsapp" href="https://wa.me/917906042463?text=Hello%20Doon%20Tour%20and%20Travel%2C%20I%20want%20to%20book%20a%20journey."><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a></div>
-</div></div><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+<section class="hero spiritual-hero">
+<div class="slide active" style="background-image:linear-gradient(90deg,rgba(2,25,52,.78),rgba(2,25,52,.18)),url('assets/kedarnath-temple.jpg')"><div class="hero-content"><span>DIVINE UTTARAKHAND JOURNEYS</span><h1>Kedarnath Dham Yatra</h1><p>Begin a sacred Himalayan journey to the holy abode of Lord Shiva. Travel with comfort, devotion and dependable support.</p><div class="hero-actions"><a href="#quote" class="btn">Plan Your Yatra</a><a href="https://wa.me/917906042463" class="btn btn-outline">WhatsApp Us</a></div></div></div>
+<div class="slide" style="background-image:linear-gradient(90deg,rgba(2,25,52,.78),rgba(2,25,52,.18)),url('assets/gangotri-temple.jpg')"><div class="hero-content"><span>CHAR DHAM PILGRIMAGE</span><h1>Gangotri Dham</h1><p>Experience the spiritual serenity of Gangotri, the sacred origin of Maa Ganga, surrounded by the majestic Himalayas.</p><div class="hero-actions"><a href="#quote" class="btn">Book Your Journey</a></div></div></div>
+<div class="slide" style="background-image:linear-gradient(90deg,rgba(2,25,52,.78),rgba(2,25,52,.18)),url('assets/yamunotri-temple.jpg')"><div class="hero-content"><span>A JOURNEY OF FAITH</span><h1>Yamunotri Dham</h1><p>Seek blessings at the sacred source of Maa Yamuna and discover the peace and beauty of Uttarakhand's divine valleys.</p><div class="hero-actions"><a href="#quote" class="btn">Start Your Yatra</a></div></div></div>
+<div class="slide" style="background-image:linear-gradient(90deg,rgba(2,25,52,.78),rgba(2,25,52,.18)),url('assets/tungnath-temple.jpg')"><div class="hero-content"><span>SPIRITUAL HIMALAYAN ESCAPE</span><h1>Tungnath Temple</h1><p>Travel into the peaceful Himalayan heights for a memorable temple journey filled with devotion and breathtaking views.</p><div class="hero-actions"><a href="#quote" class="btn">Explore Uttarakhand</a></div></div></div>
+<div class="slider-dots"><button class="dot active"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button></div>
 </section>
 
 <div class="quick"><div class="container quick-grid">
@@ -172,18 +281,18 @@ img{max-width:100%;height:auto}
 
 <section class="services" id="services"><div class="container"><div class="section-head"><span class="kicker">Everything in one place</span><h2>Our Travel Services</h2><p>Convenient travel solutions from taxi bookings and transfers to tours, hotels, tickets and travel-related assistance.</p></div>
 <div class="cards">
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=85" alt="Taxi Booking" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-taxi"></i></div><h3>Taxi Booking</h3><p>Local, outstation, one-way, round-trip, corporate and all-India taxi services.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85" alt="Air Tickets" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-plane"></i></div><h3>Air Tickets</h3><p>Domestic and international air ticket booking and travel assistance.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85" alt="Bus Booking" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-bus"></i></div><h3>Bus Booking</h3><p>Bus ticket booking for Uttarakhand and destinations across India.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85" alt="Train Booking" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-train"></i></div><h3>Train Booking</h3><p>Train ticket booking assistance for your planned journey.</p></div>
+<div class="card"><img class="service-img" src="assets/char-dham-yatra-new.jpg" alt="Taxi Booking" onerror="this.style.display='none'" data-admin-key="service-taxi-booking"><div class="icon"><i class="fa-solid fa-taxi"></i></div><h3>Taxi Booking</h3><p>Local, outstation, one-way, round-trip, corporate and all-India taxi services.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85" alt="Air Tickets" onerror="this.style.display='none'" data-admin-key="service-air-tickets"><div class="icon"><i class="fa-solid fa-plane"></i></div><h3>Air Tickets</h3><p>Domestic and international air ticket booking and travel assistance.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85" alt="Bus Booking" onerror="this.style.display='none'" data-admin-key="service-bus-booking"><div class="icon"><i class="fa-solid fa-bus"></i></div><h3>Bus Booking</h3><p>Bus ticket booking for Uttarakhand and destinations across India.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85" alt="Train Booking" onerror="this.style.display='none'" data-admin-key="service-train-booking"><div class="icon"><i class="fa-solid fa-train"></i></div><h3>Train Booking</h3><p>Train ticket booking assistance for your planned journey.</p></div>
 <div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=85" alt="Uttarakhand Tours" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-mountain"></i></div><h3>Uttarakhand Tours</h3><p>Customized transportation, hotels, sightseeing and tour planning.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=85" alt="Char Dham Yatra" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-om"></i></div><h3>Char Dham Yatra</h3><p>Yamunotri, Gangotri, Kedarnath and Badrinath travel arrangements.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85" alt="Hotel Booking" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-hotel"></i></div><h3>Hotel Booking</h3><p>Hotel arrangements based on your destination, group size and budget.</p></div>
+<div class="card"><img class="service-img" src="assets/char-dham-yatra-new.jpg" alt="Char Dham Yatra" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-om"></i></div><h3>Char Dham Yatra</h3><p>Yamunotri, Gangotri, Kedarnath and Badrinath travel arrangements.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85" alt="Hotel Booking" onerror="this.style.display='none'" data-admin-key="service-hotel-booking"><div class="icon"><i class="fa-solid fa-hotel"></i></div><h3>Hotel Booking</h3><p>Hotel arrangements based on your destination, group size and budget.</p></div>
 <div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=85" alt="Pickup & Drop" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-car-side"></i></div><h3>Pickup & Drop</h3><p>Airport and railway station pickup & drop with comfortable vehicles.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Honeymoon Packages" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-heart"></i></div><h3>Honeymoon Packages</h3><p>Customized stays, sightseeing and transportation for memorable trips.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85" alt="Family & Group Tours" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h3>Family & Group Tours</h3><p>Complete coordination for families, private groups and corporate travel.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Wedding Transport" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-champagne-glasses"></i></div><h3>Wedding Transport</h3><p>Multiple vehicle arrangements for weddings, events and conferences.</p></div>
-<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85" alt="Travel Assistance" onerror="this.style.display='none'"><div class="icon"><i class="fa-solid fa-file-shield"></i></div><h3>Travel Assistance</h3><p>Passport, selected RTO, vehicle insurance, challan and document services.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Honeymoon Packages" onerror="this.style.display='none'" data-admin-key="service-honeymoon"><div class="icon"><i class="fa-solid fa-heart"></i></div><h3>Honeymoon Packages</h3><p>Customized stays, sightseeing and transportation for memorable trips.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85" alt="Family & Group Tours" onerror="this.style.display='none'" data-admin-key="service-family"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h3>Family & Group Tours</h3><p>Complete coordination for families, private groups and corporate travel.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Wedding Transport" onerror="this.style.display='none'" data-admin-key="service-wedding"><div class="icon"><i class="fa-solid fa-champagne-glasses"></i></div><h3>Wedding Transport</h3><p>Multiple vehicle arrangements for weddings, events and conferences.</p></div>
+<div class="card"><img class="service-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85" alt="Travel Assistance" onerror="this.style.display='none'" data-admin-key="service-travel-assistance"><div class="icon"><i class="fa-solid fa-file-shield"></i></div><h3>Travel Assistance</h3><p>Passport, selected RTO, vehicle insurance, challan and document services.</p></div>
 </div>
 <div style="margin-top:55px" class="section-head"><span class="kicker">More Assistance</span><h2>Additional Services</h2><p>Travel and vehicle-related assistance available from our Dehradun office.</p></div>
 <div class="extra-services">
@@ -200,35 +309,35 @@ img{max-width:100%;height:auto}
 <section id="fleet"><div class="container"><div class="section-head"><span class="kicker">Comfort for every group size</span><h2>Our Taxi</h2><p>Vehicle availability depends on your travel date and requirement. Other vehicles can also be arranged on request.</p></div>
 <div class="fleet-grid">
 <div class="vehicle">
-<img src="assets/swift-dzire.jpg" alt="Swift Dzire">
+<img src="assets/swift-dzire.jpg" alt="Swift Dzire" data-admin-key="fleet-swift-dzire">
 <div class="vehicle-body"><h3>Swift Dzire</h3>
 <div class="vehicle-meta"><span><i class="fa-solid fa-user-group"></i> 4 Passengers</span><span><i class="fa-solid fa-suitcase"></i> 2–3 Bags</span></div>
 <p>Ideal for individuals, couples & small groups.</p>
 <a class="fleet-book" href="https://wa.me/917906042463?text=Hello%2C%20I%20want%20to%20book%20Swift%20Dzire.">Book Now <i class="fa-solid fa-arrow-right"></i></a>
 </div></div>
 <div class="vehicle">
-<img src="assets/maruti-ertiga.jpg" alt="Maruti Ertiga">
+<img src="assets/maruti-ertiga.jpg" alt="Maruti Ertiga" data-admin-key="fleet-maruti-ertiga">
 <div class="vehicle-body"><h3>Maruti Ertiga</h3>
 <div class="vehicle-meta"><span><i class="fa-solid fa-user-group"></i> 6–7 Passengers</span><span><i class="fa-solid fa-suitcase"></i> 3–4 Bags</span></div>
 <p>Comfortable for families & small groups.</p>
 <a class="fleet-book" href="https://wa.me/917906042463?text=Hello%2C%20I%20want%20to%20book%20Maruti%20Ertiga.">Book Now <i class="fa-solid fa-arrow-right"></i></a>
 </div></div>
 <div class="vehicle">
-<img src="assets/toyota-innova.jpg" alt="Toyota Innova">
+<img src="assets/toyota-innova.jpg" alt="Toyota Innova" data-admin-key="fleet-toyota-innova">
 <div class="vehicle-body"><h3>Toyota Innova</h3>
 <div class="vehicle-meta"><span><i class="fa-solid fa-user-group"></i> 6–7 Passengers</span><span><i class="fa-solid fa-suitcase"></i> 4–5 Bags</span></div>
 <p>Great for family & outstation journeys.</p>
 <a class="fleet-book" href="https://wa.me/917906042463?text=Hello%2C%20I%20want%20to%20book%20Toyota%20Innova.">Book Now <i class="fa-solid fa-arrow-right"></i></a>
 </div></div>
 <div class="vehicle">
-<img src="assets/innova-crysta.jpg" alt="Innova Crysta">
+<img src="assets/innova-crysta.jpg" alt="Innova Crysta" data-admin-key="fleet-innova-crysta">
 <div class="vehicle-body"><h3>Innova Crysta</h3>
 <div class="vehicle-meta"><span><i class="fa-solid fa-user-group"></i> 6–7 Passengers</span><span><i class="fa-solid fa-suitcase"></i> 4–5 Bags</span></div>
 <p>Premium comfort for longer journeys.</p>
 <a class="fleet-book" href="https://wa.me/917906042463?text=Hello%2C%20I%20want%20to%20book%20Innova%20Crysta.">Book Now <i class="fa-solid fa-arrow-right"></i></a>
 </div></div>
 <div class="vehicle">
-<img src="assets/tempo-traveller.jpg" alt="Tempo Traveller">
+<img src="assets/tempo-traveller.jpg" alt="Tempo Traveller" data-admin-key="fleet-tempo-traveller">
 <div class="vehicle-body"><h3>Tempo Traveller</h3>
 <div class="vehicle-meta"><span><i class="fa-solid fa-user-group"></i> 12–17 Passengers</span><span><i class="fa-solid fa-suitcase"></i> Luggage</span></div>
 <p>For groups, tours and pilgrimage travel.</p>
@@ -238,10 +347,10 @@ img{max-width:100%;height:auto}
 
 <section class="destinations" id="packages"><div class="container"><div class="section-head"><span class="kicker">Explore with us</span><h2>Popular Destinations</h2><p>From weekend hill escapes to spiritual journeys and North India tours.</p></div>
 <div class="dest-grid">
-<div class="dest"><img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=85" alt="Mussoorie" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';"><div class="dest-info"><h3>Mussoorie</h3><small>Queen of the Hills</small></div></div>
-<div class="dest"><img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=85" alt="Rishikesh" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';"><div class="dest-info"><h3>Rishikesh</h3><small>Yoga • Ganga • Adventure</small></div></div>
-<div class="dest"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=85" alt="Kedarnath" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';"><div class="dest-info"><h3>Kedarnath</h3><small>Sacred Himalayan Journey</small></div></div>
-<div class="dest"><img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=85" alt="North India tour" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';"><div class="dest-info"><h3>North India</h3><small>Delhi • Agra • Jaipur & More</small></div></div>
+<div class="dest"><img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=85" alt="Mussoorie" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';" data-admin-key="destination-1"><div class="dest-info"><h3>Mussoorie</h3><small>Queen of the Hills</small></div></div>
+<div class="dest"><img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=85" alt="Rishikesh" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';" data-admin-key="destination-2"><div class="dest-info"><h3>Rishikesh</h3><small>Yoga • Ganga • Adventure</small></div></div>
+<div class="dest"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=85" alt="Kedarnath" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';" data-admin-key="gallery-kedarnath"><div class="dest-info"><h3>Kedarnath</h3><small>Sacred Himalayan Journey</small></div></div>
+<div class="dest"><img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=85" alt="North India tour" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';" data-admin-key="destination-3"><div class="dest-info"><h3>North India</h3><small>Delhi • Agra • Jaipur & More</small></div></div>
 </div></div></section>
 
 <section style="background:#f7fbff" id="all-destinations"><div class="container"><div class="section-head"><span class="kicker">Travel Across India</span><h2>More Popular Destinations</h2><p>Plan local Uttarakhand journeys, North India holidays and customized Pan India taxi or tour services.</p></div><div class="destination-list"><div class="region"><h3><i class="fa-solid fa-mountain-sun"></i> Uttarakhand</h3><p>Dehradun • Mussoorie • Rishikesh • Haridwar • Kedarnath • Badrinath • Yamunotri • Gangotri • Auli • Uttarkashi • Harsil • Barkot • Guptkashi • Nainital • Jim Corbett • Kainchi Dham • Dhanaulti</p></div><div class="region"><h3><i class="fa-solid fa-route"></i> North India</h3><p>Delhi • Agra • Jaipur • Chandigarh • Himachal Pradesh • Jammu & Kashmir • Uttar Pradesh • Rajasthan</p></div><div class="region"><h3><i class="fa-solid fa-earth-asia"></i> Pan India</h3><p>Taxi and customized tour services are available for destinations across India. Share your route and travel dates for a customized plan.</p></div></div></div></section>
@@ -276,22 +385,28 @@ img{max-width:100%;height:auto}
 <section id="gallery" class="gallery-showcase"><div class="container">
 <div class="section-head"><span class="kicker">Explore Beautiful Destinations</span><h2>Explore Our Image Gallery</h2><p>Take a look at beautiful destinations, travel experiences and journeys with DOON TOUR AND TRAVEL.</p></div>
 <div class="destination-gallery">
-<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=700&q=85" alt="Kedarnath"><span>Kedarnath</span></div>
-<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=700&q=85" alt="Badrinath"><span>Badrinath</span></div>
-<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=700&q=85" alt="Gangotri"><span>Gangotri</span></div>
-<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=700&q=85" alt="Yamunotri"><span>Yamunotri</span></div>
+<div class="gallery-dest"><img src="assets/kedarnath-temple.jpg" alt="Kedarnath"><span>Kedarnath</span></div>
+<div class="gallery-dest"><img src="assets/badrinath-temple.jpg" alt="Badrinath" data-admin-key="gallery-badrinath"><span>Badrinath</span></div>
+<div class="gallery-dest"><img src="assets/gangotri-temple.jpg" alt="Gangotri" data-admin-key="gallery-gangotri"><span>Gangotri</span></div>
+<div class="gallery-dest"><img src="assets/yamunotri-temple.jpg" alt="Yamunotri" data-admin-key="gallery-yamunotri"><span>Yamunotri</span></div>
 <div class="gallery-dest"><img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=700&q=85" alt="Mussoorie"><span>Mussoorie</span></div>
 <div class="gallery-dest"><img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=700&q=85" alt="Rishikesh"><span>Rishikesh</span></div>
-<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=85" alt="Haridwar"><span>Haridwar</span></div>
+<div class="gallery-dest"><img src="assets/haridwar-temple.jpg" alt="Haridwar" data-admin-key="gallery-haridwar"><span>Haridwar</span></div>
 <div class="gallery-dest"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=700&q=85" alt="Auli"><span>Auli</span></div>
-<div class="gallery-dest"><img src="assets/nainital.jpg" alt="Nainital"><span>Nainital</span></div>
+<div class="gallery-dest"><img src="assets/nainital.jpg" alt="Nainital" data-admin-key="gallery-nainital"><span>Nainital</span></div>
 <div class="gallery-dest"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=85" alt="Jim Corbett"><span>Jim Corbett</span></div>
 <div class="gallery-dest"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Dhanaulti"><span>Dhanaulti</span></div>
-<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=85" alt="Delhi Agra Jaipur"><span>Delhi • Agra • Jaipur</span></div>
+<div class="gallery-dest"><img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=700&q=85" alt="Delhi Agra Jaipur"><span>Delhi • Agra • Jaipur</span></div>
 </div>
 <div style="text-align:center;margin-top:28px"><a class="gallery-more" href="#quote">Plan Your Trip <i class="fa-solid fa-arrow-right"></i></a></div>
 </div></section>
 
+<section class="reviews-section"><div class="container"><div class="section-head"><span class="kicker">TRAVELLER EXPERIENCES</span><h2>What Our Customers Say</h2><p>Trusted travel support for families, pilgrims and travellers.</p></div>
+<div class="review-grid">
+<div class="review-card"><div class="stars">★★★★★</div><p>“Our Kedarnath trip was very well managed. The driver was polite, the vehicle was clean and the entire journey was comfortable.”</p><h4>Rahul Sharma</h4><span>Char Dham Traveller</span></div>
+<div class="review-card"><div class="stars">★★★★★</div><p>“Excellent taxi service from Dehradun. Everything was arranged smoothly and we received helpful support throughout our family tour.”</p><h4>Priya Verma</h4><span>Family Traveller</span></div>
+<div class="review-card"><div class="stars">★★★★★</div><p>“Good experience for our Uttarakhand tour. Easy booking, professional driver and timely pickup. Highly recommended.”</p><h4>Amit Gupta</h4><span>Uttarakhand Tour</span></div>
+</div></div></section>
 <section class="customer-exp"><div class="container"><span class="kicker" style="color:#ffc43d">Customer Experience</span><h2>We Value Every Journey</h2><p>Our customers trust us for family trips, pilgrimage journeys, airport transfers and outstation travel. We aim to provide a professional experience from the first enquiry to completion of the journey.</p><h3>Your Journey, Our Responsibility.</h3></div></section>
 
 <section id="faq"><div class="container"><div class="section-head"><span class="kicker">Need Help?</span><h2>Frequently Asked Questions</h2></div><div class="faq">
@@ -323,7 +438,12 @@ img{max-width:100%;height:auto}
 </div></section>
 </main>
 
-<footer><div class="container"><div class="footer-grid">
+<section id="location-map" class="map-section">
+<div class="container">
+<div class="section-head"><span class="kicker">FIND US IN DEHRADUN</span><h2>Our Location</h2><p>Visit DOON TOUR AND TRAVEL or contact us for taxi booking, tour packages and travel assistance.</p></div>
+<div class="map-wrap">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.809912737228!2d78.05344747392728!3d30.2994726507595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929ac8fdef371%3A0xdbf7f12e0b982f7b!2sDOON%20TOUR%20AND%20TRAVEL!5e0!3m2!1sen!2sin!4v1791362087487!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div></div></section><footer><div class="container"><div class="footer-grid">
 <div><img class="footer-logo" src="assets/doon-logo.jpg" alt="Doon Tour and Travel" onerror="this.onerror=null;this.src=\'assets/doon-logo.jpg\';"><p>Professional taxi, tour and travel solutions from Dehradun across Uttarakhand and India.</p></div>
 <div><h4>Quick Links</h4><a href="#about">About Us</a><a href="#services">Our Services</a><a href="#fleet">Taxi Services</a><a href="#packages">Tour Packages</a><a href="#chardham">Char Dham Yatra</a></div>
 <div><h4>Services</h4><a href="#services">Hotel Booking</a><a href="#services">Air Ticket Booking</a><a href="#services">Bus & Train Booking</a><a href="#contact">Contact Us</a><a href="#quote">Get a Quote</a></div>
@@ -338,4 +458,11 @@ document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>document.getElemen
 document.getElementById('year').textContent=new Date().getFullYear();
 function sendQuote(e){e.preventDefault();const v=id=>document.getElementById(id).value;let t=`Hello DOON TOUR AND TRAVEL,%0A%0AI want a quotation.%0AName: ${v('qname')}%0AMobile: ${v('qphone')}%0APickup: ${v('qfrom')}%0ADestination: ${v('qto')}%0ATravel Date: ${v('qdate')}%0AService: ${v('qservice')}%0ADetails: ${v('qmsg')}`;window.open('https://wa.me/917906042463?text='+t,'_blank')}
 </script>
-</body></html>
+<script>
+(function(){
+ document.querySelectorAll("[data-admin-key]").forEach(function(img){
+   var saved=localStorage.getItem("doon_img_"+img.dataset.adminKey);
+   if(saved) img.src=saved;
+ });
+})();
+</script></body></html>

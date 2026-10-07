@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doon Tour Admin - Image Manager</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f8fc;color:#123}.top{background:#063b76;color:#fff;padding:22px}.wrap{width:min(1050px,92%);margin:30px auto}.notice{background:#fff7d6;border:1px solid #f2d36c;padding:14px 18px;border-radius:12px;margin-bottom:20px;line-height:1.5}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid #dfe8f0;border-radius:15px;padding:18px;box-shadow:0 8px 22px #063b7612}.card h3{margin:0 0 12px;color:#063b76}.preview{width:100%;height:150px;object-fit:cover;border-radius:10px;background:#edf2f7;margin-bottom:12px}.btn{border:0;background:#ffb400;color:#062f5d;font-weight:800;padding:10px 14px;border-radius:8px;cursor:pointer}.reset{background:#e9eef3;margin-left:6px}input{width:100%;margin:8px 0 12px}@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid{grid-template-columns:1fr}}</style>
+</head><body><div class="top"><h1>DOON TOUR AND TRAVEL — Image Admin</h1><p>Replace website images from this browser.</p></div><div class="wrap">
+<div class="notice"><b>Static HTML admin:</b> uploaded replacements are saved in this browser only. For permanent online changes visible to every visitor, the website needs a database/storage backend (for example Supabase or Firebase).</div>
+<div id="grid" class="grid"></div></div>
+<script>
+const items=[
+["service-taxi-booking","Taxi Booking"],["service-air-tickets","Air Tickets"],["service-bus-booking","Bus Booking"],["service-train-booking","Train Booking"],["service-char-dham","Char Dham Yatra"],["service-hotel-booking","Hotel Booking"],
+["fleet-swift-dzire","Swift Dzire"],["fleet-maruti-ertiga","Maruti Ertiga"],["fleet-toyota-innova","Toyota Innova"],["fleet-innova-crysta","Innova Crysta"],["fleet-tempo-traveller","Tempo Traveller"],
+["gallery-kedarnath","Gallery: Kedarnath"],["gallery-badrinath","Gallery: Badrinath"],["gallery-gangotri","Gallery: Gangotri"],["gallery-yamunotri","Gallery: Yamunotri"],["gallery-haridwar","Gallery: Haridwar"],["gallery-nainital","Gallery: Nainital"]
+,["destination-1","Popular Destination: Mussoorie"],["destination-2","Popular Destination: Rishikesh"],["destination-3","Popular Destination: North India"]];
+const grid=document.getElementById("grid");
+items.forEach(([key,label])=>{
+ const c=document.createElement("div");c.className="card";
+ c.innerHTML=`<h3>${label}</h3><img class="preview" id="p-${key}"><input type="file" accept="image/*" id="f-${key}"><button class="btn" onclick="saveImg('${key}')">Save Image</button><button class="btn reset" onclick="resetImg('${key}')">Reset</button>`;
+ grid.appendChild(c);
+ const saved=localStorage.getItem("doon_img_"+key); if(saved)c.querySelector("img").src=saved;
+});
+function saveImg(key){const f=document.getElementById("f-"+key).files[0];if(!f)return alert("Choose an image first.");const r=new FileReader();r.onload=e=>{localStorage.setItem("doon_img_"+key,e.target.result);document.getElementById("p-"+key).src=e.target.result;alert("Saved. Refresh index.html to see the change.");};r.readAsDataURL(f);}
+function resetImg(key){localStorage.removeItem("doon_img_"+key);document.getElementById("p-"+key).removeAttribute("src");alert("Reset. Refresh index.html.");}
+</script></body></html>
